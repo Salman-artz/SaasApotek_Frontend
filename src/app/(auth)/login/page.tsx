@@ -26,8 +26,8 @@ import {
 
 export default function LoginPage() {
   const { login } = useAuth();
-  const [email, setEmail] = useState("salman@apoteksehat.com");
-  const [password, setPassword] = useState("password123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -44,15 +44,6 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
-
-  const handleQuickDemo = (demoEmail: string) => {
-    setEmail(demoEmail);
-    setPassword("password123");
-    setError(null);
-  };
-
-  const isOwnerSelected = email === "salman@apoteksehat.com";
-  const isKasirSelected = email === "kasir@apoteksehat.com";
 
   return (
     <div className="min-h-screen w-full flex flex-col md:flex-row bg-surface text-on-surface">
@@ -183,63 +174,6 @@ export default function LoginPage() {
                   <span>{error}</span>
                 </div>
               )}
-
-              {/* Quick Demo Switcher Tabs */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">
-                    Pilih Akun Demo (1-Klik Isi)
-                  </span>
-                  <span className="text-[11px] text-[#006a61] font-semibold bg-[#86f2e4]/30 px-2 py-0.5 rounded-full border border-secondary-container/40">
-                    Siap Digunakan
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-2 gap-2.5">
-                  <button
-                    type="button"
-                    onClick={() => handleQuickDemo("salman@apoteksehat.com")}
-                    className={`flex items-center gap-2.5 p-3 rounded-xl border text-left transition-all ${
-                      isOwnerSelected
-                        ? "border-primary-container bg-primary-container/10 text-primary-container shadow-sm ring-1 ring-primary-container"
-                        : "border-outline-variant/40 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface"
-                    }`}
-                  >
-                    <div className={`p-2 rounded-lg ${isOwnerSelected ? "bg-primary-container text-white" : "bg-surface-container-low text-on-surface-variant"}`}>
-                      <span className="material-symbols-outlined text-[18px]">store</span>
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-xs font-bold truncate">Akun Owner</div>
-                      <div className="text-[10px] text-on-surface-variant truncate">Akses Penuh SaaS</div>
-                    </div>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => handleQuickDemo("kasir@apoteksehat.com")}
-                    className={`flex items-center gap-2.5 p-3 rounded-xl border text-left transition-all ${
-                      isKasirSelected
-                        ? "border-[#006a61] bg-[#86f2e4]/20 text-[#006a61] shadow-sm ring-1 ring-[#006a61]"
-                        : "border-outline-variant/40 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface"
-                    }`}
-                  >
-                    <div className={`p-2 rounded-lg ${isKasirSelected ? "bg-[#006a61] text-white" : "bg-surface-container-low text-on-surface-variant"}`}>
-                      <span className="material-symbols-outlined text-[18px]">point_of_sale</span>
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-xs font-bold truncate">Akun Kasir</div>
-                      <div className="text-[10px] text-on-surface-variant truncate">Akses POS Kasir</div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-
-              <div className="relative flex items-center justify-center my-4">
-                <div className="border-t border-outline-variant/30 w-full" />
-                <span className="bg-surface-container-lowest px-3 text-[11px] font-medium text-outline uppercase tracking-wider absolute">
-                  Atau masukkan kredensial
-                </span>
-              </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-1.5">

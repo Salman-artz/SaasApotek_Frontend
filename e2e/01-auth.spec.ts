@@ -8,7 +8,7 @@ test.describe('CUJ-01: Authentication, Registration & Onboarding', () => {
   test('Happy Path: Owner can login with valid credentials and redirect to dashboard', async ({ page }) => {
     await page.goto('/login');
 
-    await expect(page.getByRole('heading', { name: /masuk akun/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /masuk.*akun/i })).toBeVisible();
 
     await page.locator('[data-testid="login-email"]').fill('salman@apoteksehat.com');
     await page.locator('[data-testid="login-password"]').fill('password123');

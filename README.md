@@ -19,6 +19,12 @@
   <em>Dashboard Operasional Apotek Digital & Ringkasan Metrik Farmasi</em>
 </p>
 
+<p align="center">
+  <img src="public/screenshots/login.png" alt="Halaman Login Apotek Digital" width="95%" />
+  <br/>
+  <em>Halaman Autentikasi Sesi & Multi-Role Tenant Isolation (Desain Modern)</em>
+</p>
+
 <details open>
 <summary><strong>Lihat Galeri Fitur Unggulan Lainnya ▾</strong></summary>
 
