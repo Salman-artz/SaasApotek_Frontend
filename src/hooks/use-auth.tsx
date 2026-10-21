@@ -66,7 +66,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (storedUser) setUser(JSON.parse(storedUser));
       if (storedTenant) setTenant(JSON.parse(storedTenant));
       if (storedOutlet) setActiveOutlet(JSON.parse(storedOutlet));
-      fetchMe().finally(() => setIsLoading(false));
+      // Langsung hilangkan loading spinner jika sudah ada data lokal (instan render)
+      setIsLoading(false);
+      // Validasi sesi dan sinkronisasi di latar belakang
+      fetchMe().catch(() => {});
     } else {
       setIsLoading(false);
     }

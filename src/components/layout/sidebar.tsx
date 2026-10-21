@@ -45,6 +45,7 @@ export function Sidebar() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    prefetch={false}
                     className={cn(
                       "flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition-all duration-150 group",
                       isActive
