@@ -11,20 +11,24 @@
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots & Antarmuka Sistem
 
 <p align="center">
-  <img src="public/screenshots/dashboard.png" alt="Dashboard" width="90%" />
+  <img src="public/screenshots/dashboard.png" alt="Dashboard Apotek Digital" width="95%" />
+  <br/>
+  <em>Dashboard Operasional Apotek Digital & Ringkasan Metrik Farmasi</em>
 </p>
 
-<details>
-<summary><strong>Lihat screenshot lainnya →</strong></summary>
+<details open>
+<summary><strong>Lihat Galeri Fitur Unggulan Lainnya ▾</strong></summary>
 
-| Halaman | Preview |
-|---------|---------|
-| **Login Sesi Kasir & Apoteker** | <img src="public/screenshots/login.png" alt="Login Sesi" width="400" /> |
-| **Kasir POS** | <img src="public/screenshots/pos.png" alt="Kasir POS" width="400" /> |
-| **Inventaris & Batch** | <img src="public/screenshots/inventory.png" alt="Inventaris" width="400" /> |
+| Modul | Preview Antarmuka |
+|---|---|
+| **Point of Sale (POS) & FEFO Engine**<br/>Transaksi kasir cepat dengan alokasi otomatis batch FEFO (*First Expired, First Out*). | <img src="public/screenshots/foto1_pos_kasir_fefo.png" alt="Kasir POS FEFO" width="460" /> |
+| **Inventaris Batch Obat & Radar Kadaluarsa**<br/>Pelacakan nomor batch, stok fisik, dan status exp date obat. | <img src="public/screenshots/foto2_inventaris_batch_obat.png" alt="Inventaris Batch Obat" width="460" /> |
+| **Integrasi SatuSehat Kemenkes (HL7 FHIR)**<br/>Sinkronisasi MedicationDispense & KFA Kemenkes RI. | <img src="public/screenshots/foto3_satusehat_kemenkes.png" alt="SatuSehat Kemenkes" width="460" /> |
+| **Asisten AI Gemini & Drug Interaction Checker**<br/>Pemeriksa interaksi klinis obat dan rekomendasi restock bertenaga AI. | <img src="public/screenshots/foto4_ai_assistant_gemini.png" alt="AI Smart Assistant" width="460" /> |
+| **Login Sesi Multi-Role & Tenant Isolation**<br/>Autentikasi aman JWT dengan RBAC untuk Kasir, Apoteker, & Owner. | <img src="public/screenshots/login.png" alt="Login Sesi" width="460" /> |
 
 </details>
 
