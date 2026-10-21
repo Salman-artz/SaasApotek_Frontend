@@ -22,6 +22,7 @@
 
 | Halaman | Preview |
 |---------|---------|
+| **Login Sesi Kasir & Apoteker** | <img src="public/screenshots/login.png" alt="Login Sesi" width="400" /> |
 | **Kasir POS** | <img src="public/screenshots/pos.png" alt="Kasir POS" width="400" /> |
 | **Inventaris & Batch** | <img src="public/screenshots/inventory.png" alt="Inventaris" width="400" /> |
 
