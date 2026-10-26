@@ -3,8 +3,12 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 
 export const metadata: Metadata = {
-  title: "Apotek Digital - Smart Pharmacy Management SaaS",
-  description: "Sistem Kasir POS, Manajemen Stok FEFO, dan Faktur Apotek Terpadu",
+  title: "Apotek SaaS - Kelola Apotek, Lebih Mudah",
+  description: "Platform Operasional & Kasir POS Apotek Modern Berbasis Cloud SaaS dengan FEFO Engine, AI Assistant, dan Integrasi SatuSehat Kemenkes.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

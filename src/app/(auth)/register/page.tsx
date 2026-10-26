@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, ArrowLeft } from "lucide-react";
 
 export default function RegisterPage() {
   const { register } = useAuth();
@@ -60,14 +61,32 @@ export default function RegisterPage() {
       <div className="absolute top-0 left-0 right-0 h-64 bg-inverse-surface pointer-events-none" />
 
       <div className="w-full max-w-xl relative z-10 my-8">
+        {/* Back to Dashboard Navigation */}
+        <div className="flex items-center justify-between mb-4">
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-white/20 bg-white/10 text-xs sm:text-sm font-medium text-inverse-on-surface hover:bg-white/20 transition-all backdrop-blur-sm"
+          >
+            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+            <span>Kembali ke Dashboard</span>
+          </Link>
+        </div>
+
         {/* Brand */}
         <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="h-10 w-10 rounded-xl bg-primary-container flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-            <span className="material-symbols-outlined text-[24px]">local_pharmacy</span>
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Apotek SaaS"
+            width={44}
+            height={44}
+            className="w-11 h-11 object-contain drop-shadow"
+            priority
+          />
           <div className="text-left">
-            <h1 className="text-xl font-bold text-inverse-on-surface tracking-tight leading-tight">Apotek Digital</h1>
-            <span className="text-xs text-[#89f5e7] font-medium">Registrasi Akun Tenant Baru</span>
+            <h1 className="text-xl font-bold text-inverse-on-surface tracking-tight leading-tight">
+              Apotek <span className="text-[#86f2e4]">SaaS</span>
+            </h1>
+            <span className="text-xs text-[#86f2e4]/90 font-medium">Registrasi Akun Tenant Baru</span>
           </div>
         </div>
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,7 +22,8 @@ import {
   Building2, 
   UserCheck, 
   ShoppingBag,
-  Loader2
+  Loader2,
+  ArrowLeft
 } from "lucide-react";
 
 export default function LoginPage() {
@@ -55,18 +57,20 @@ export default function LoginPage() {
         
         {/* Top Branding */}
         <div className="flex items-center gap-3 relative z-10">
-          <div className="h-11 w-11 rounded-xl bg-primary-container flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-            <span className="material-symbols-outlined text-[24px]">local_pharmacy</span>
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Apotek SaaS"
+            width={44}
+            height={44}
+            className="w-11 h-11 object-contain drop-shadow"
+            priority
+          />
           <div>
             <h1 className="text-xl font-bold tracking-tight text-inverse-on-surface flex items-center gap-2">
-              Apotek Digital
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary-container/30 text-white border border-primary-container/40 font-semibold tracking-wide uppercase">
-                SaaS POS
-              </span>
+              Apotek <span className="text-[#86f2e4]">SaaS</span>
             </h1>
-            <p className="text-xs text-[#89f5e7] font-medium">
-              Smart Pharmacy &amp; POS Management
+            <p className="text-xs text-[#86f2e4]/90 font-medium">
+              Kelola Apotek, Lebih Mudah
             </p>
           </div>
         </div>
@@ -143,14 +147,31 @@ export default function LoginPage() {
       <div className="flex-1 flex flex-col justify-center items-center p-6 sm:p-10 lg:p-16 min-h-screen">
         <div className="w-full max-w-md sm:max-w-lg space-y-6">
           
+          {/* Back to Dashboard Button */}
+          <div className="flex items-center justify-between">
+            <Link
+              href="/"
+              className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-outline-variant/40 bg-surface-container-lowest text-xs sm:text-sm font-medium text-on-surface-variant hover:text-primary-container hover:border-primary-container/40 hover:bg-surface-container-low transition-all shadow-xs"
+            >
+              <ArrowLeft className="h-4 w-4 text-outline transition-transform group-hover:-translate-x-1 group-hover:text-primary-container" />
+              <span>Kembali ke Dashboard</span>
+            </Link>
+          </div>
+
           {/* Header on Mobile/Tablet */}
           <div className="flex md:hidden items-center gap-3 justify-center mb-2">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-blue-600 to-teal-500 flex items-center justify-center text-white shadow-md">
-              <Cross className="h-5 w-5 fill-current" />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Apotek SaaS"
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain"
+            />
             <div>
-              <span className="text-lg font-bold text-slate-900 block leading-tight">Apotek Digital</span>
-              <span className="text-xs text-slate-500 block">Sistem Kasir & Inventori</span>
+              <span className="text-lg font-bold text-on-surface block leading-tight">
+                Apotek <span className="text-primary-container">SaaS</span>
+              </span>
+              <span className="text-xs text-on-surface-variant block">Kelola Apotek, Lebih Mudah</span>
             </div>
           </div>
 

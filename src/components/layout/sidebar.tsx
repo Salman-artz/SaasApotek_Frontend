@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { navGroups } from "./sidebar-items";
 import { cn } from "@/lib/utils";
@@ -16,15 +17,20 @@ export function Sidebar() {
       {/* Brand Header */}
       <div className="flex flex-col flex-1 min-h-0">
         <div className="h-16 px-4 flex items-center gap-3 bg-inverse-surface border-b border-white/5">
-          <div className="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-md shadow-blue-500/20">
-            <span className="material-symbols-outlined text-[22px]">local_pharmacy</span>
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Apotek SaaS"
+            width={36}
+            height={36}
+            className="w-9 h-9 object-contain drop-shadow"
+            priority
+          />
           <div className="flex flex-col min-w-0">
             <span className="font-semibold text-sm text-inverse-on-surface tracking-tight truncate">
-              {tenant?.name || "Apotek Digital"}
+              {tenant?.name || "Apotek SaaS"}
             </span>
-            <span className="text-[11px] text-[#89f5e7] font-medium tracking-wide">
-              {tenant?.plan ? `Cloud SaaS • ${tenant.plan}` : "Cloud SaaS POS"}
+            <span className="text-[11px] text-[#86f2e4] font-medium tracking-wide">
+              {tenant?.plan ? `Cloud SaaS • ${tenant.plan}` : "Kelola Apotek Lebih Mudah"}
             </span>
           </div>
         </div>
